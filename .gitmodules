@@ -1,0 +1,9 @@
+[submodule "opsui-host-tool"]
+	path = opsui-host-tool
+	url = git@github.com:Flutter-Global/opsui-host-tool.git
+[submodule "gbpseui-tool"]
+	path = gbpseui-tool
+	url = git@github.com:Flutter-Global/gbpseui-tool.git
+[submodule "gbpcui-tool"]
+	path = gbpcui-tool
+	url = git@github.com:Flutter-Global/gbpcui-tool.git
