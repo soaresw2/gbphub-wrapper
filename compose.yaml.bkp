@@ -1,0 +1,30 @@
+services:
+  opsui:
+    build:
+      context: ./opsui-host-tool
+      args:
+        - GITHUB_TOKEN=$GITHUB_TOKEN
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+
+  gbpseui:
+    build:
+      context: ./gbpseui-tool
+      args:
+        - GITHUB_TOKEN=$GITHUB_TOKEN
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3001:3001
+
+  gbpcui:
+    build:
+      context: ./gbpcui-tool
+      args:
+        - GITHUB_TOKEN=$GITHUB_TOKEN
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3002:3002
