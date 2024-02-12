@@ -3,7 +3,7 @@ services:
     image: node-wrapper
     volumes:
       - ./opsui-host-tool:/app
-      - ./opsui-host-tool/node_modules:/app/node_modules
+      - node_modules:/app/node_modules
       - ./root:/root
     working_dir: /app
     env_file: .env.shared
@@ -15,7 +15,7 @@ services:
     image: node-wrapper
     volumes:
       - ./gbpseui-tool:/app
-      - ./gbpseui-tool/node_modules:/app/node_modules
+      - node_modules:/app/node_modules
       - ./root:/root
     working_dir: /app
     env_file: .env.shared
@@ -27,7 +27,7 @@ services:
     image: node-wrapper
     volumes:
       - ./gbpcui-tool:/app
-      - ./gbpcui-tool/node_modules:/app/node_modules
+      - node_modules:/app/node_modules
       - ./root:/root
     working_dir: /app
     env_file: .env.shared
@@ -35,5 +35,5 @@ services:
       - 3002:3000
     command: npm start
 
-# volumes:
-#   node_modules:
+volumes:
+  node_modules:

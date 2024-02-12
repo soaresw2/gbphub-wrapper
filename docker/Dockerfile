@@ -1,6 +1,6 @@
 FROM --platform=linux/amd64 debian
 
-ENV NODE_VERSION=18.9.0
+ENV NODE_VERSION=18.12.0
 RUN apt update && \
   apt install --yes curl xz-utils && \
   apt clean && \
