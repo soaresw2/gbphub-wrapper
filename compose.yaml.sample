@@ -1,39 +1,44 @@
 services:
   opsui:
-    image: gbphub-wrapper
+    image: gbphub-wrapper-18.17.0
     volumes:
       - ./opsui-host-tool:/app
-      - node_modules:/app/node_modules
+      - node_modules18170:/app/node_modules
       - ./root:/root
     working_dir: /app
-    env_file: .env.shagred
+    env_file: .env.shared
     ports:
       - 3000:3000
     command: npm start
 
   gbpseui:
-    image: gbphub-wrapper
+    image: gbphub-wrapper-18.9.0
+    depends_on:
+      - opsui
     volumes:
       - ./gbpseui-tool:/app
-      - node_modules:/app/node_modules
+      - node_modules1890:/app/node_modules
       - ./root:/root
     working_dir: /app
     env_file: .env.shared
     ports:
-      - 3001:3000
+      - 3001:3001
     command: npm start
 
   gbpcui:
-    image: gbphub-wrapper
+    image: gbphub-wrapper-18.9.0
+    depends_on:
+      - opsui
     volumes:
       - ./gbpcui-tool:/app
-      - node_modules:/app/node_modules
+      - node_modules1890:/app/node_modules
       - ./root:/root
     working_dir: /app
     env_file: .env.shared
     ports:
-      - 3002:3000
+      - 3002:3002
     command: npm start
 
 volumes:
-  node_modules:
+  node_modules18170:
+  node_modules1890:
